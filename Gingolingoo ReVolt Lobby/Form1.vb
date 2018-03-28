@@ -15,6 +15,7 @@ Public Class MainWindow
     End Function
 
     Public Function GetIniValue(section As String, key As String, filename As String, Optional defaultValue As String = "") As String
+        'how the Ini-Stream is formed
         Dim sb As New StringBuilder(500)
         If GetPrivateProfileString(section, key, defaultValue, sb, sb.Capacity, My.Settings.languagefile) > 0 Then
             Return sb.ToString
@@ -25,8 +26,8 @@ Public Class MainWindow
 
     Dim Nodes(4096) As TreeNode
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ExecuteParams()
-        Me.Hide()
+        ExecuteParams() 'Executes the Start Parameters like dev or console
+        Me.Hide() 'hides the main form for displaying the login form first
         wanip.Text = GetExternalIP().ToString
         ToolStripStatusLabel4.Text = My.Application.Info.Version.ToString
 
@@ -48,6 +49,7 @@ Public Class MainWindow
     End Sub
 
     Public Function reloadall()
+        'reloads the Nicklist in the Main-Window
         Dim treeview1nodes As TreeNodeCollection = TreeView1.Nodes
         TreeView1.Nodes.Clear()
         Nodes(0) = New TreeNode(GetIniValue("language", "$friends", My.Settings.languagefile, "$friends"))
@@ -75,31 +77,28 @@ Public Class MainWindow
     End Function
 
     Private Shared Function GetExternalIP() As String
-
+        'Resolve the External IP-Adress
         Dim Response As String = String.Empty
-
         Try
-
             Dim ExternalIP As String
             ExternalIP = (New WebClient()).DownloadString("http://checkip.dyndns.org/")
             ExternalIP = (New Regex("\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")) _
                      .Matches(ExternalIP)(0).ToString()
             Return ExternalIP
-
         Catch ex As Exception
             Response = ex.Message.ToString
             console.RichTextBox1.AppendText(ex.Message.ToString)
         End Try
-
-        Return Response
-
+        Return Response 'show the IP-Adress in the Statusbar
     End Function
 
     Private Sub SettingsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles settingsmenu.Click
+        'Shows the Settings-Window
         settings.Show()
     End Sub
 
     Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        'gets the ENTER-KeyDown Event on the Chat-Textbox
         If e.KeyData = Keys.Enter Then
             RichTextBox1.AppendText(My.Settings.nickname & ": " + TextBox1.Text & vbNewLine)
             TextBox1.Text = Nothing
@@ -108,14 +107,17 @@ Public Class MainWindow
     End Sub
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles quitmenu.Click
+        'quits the application
         Application.Exit()
     End Sub
 
     Private Sub quit_Click(sender As Object, e As EventArgs) Handles quit.Click
+        'quits the application
         Application.Exit()
     End Sub
 
     Private Sub delchathistory_Click(sender As Object, e As EventArgs) Handles delchathistory.Click
+        'deletes the chat history
         RichTextBox1.Text = Nothing
     End Sub
 
@@ -126,24 +128,29 @@ Public Class MainWindow
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'shows who is typing in main chat
         ToolStripLabel1.Text = "$typing"
         ToolStripLabel1.Visible = False
         Timer1.Stop()
     End Sub
 
     Private Sub refreshall_Click(sender As Object, e As EventArgs) Handles refreshall.Click
+        'reloads all TreeView1-Entries, also known as the Nicklist
         reloadall()
     End Sub
 
     Private Sub create_server_Click(sender As Object, e As EventArgs) Handles create_server.Click
+        'show the New-Server-Window
         createserver.Show()
     End Sub
 
     Private Sub NewserverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles newservermenu.Click
+        'show the New-Server-Window
         createserver.Show()
     End Sub
 
     Private Sub settings_Click(sender As Object, e As EventArgs) Handles settingstoolstrip.Click
+        'show the settings-window
         settings.Show()
     End Sub
 
@@ -159,6 +166,8 @@ Public Class MainWindow
 
 
     '------- Haupt-Sub -------
+    ' console = starts program with the build-in console for troubleshooting
+    ' dev = enables the Developer-Menu
     Public Sub ExecuteParams()
         Dim args As String()
         args = Environment.GetCommandLineArgs()
@@ -179,6 +188,7 @@ Public Class MainWindow
     End Sub
 
     Private Sub ConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsoleToolStripMenuItem.Click
+        'show the Console-Window
         console.Show()
     End Sub
 
@@ -266,10 +276,12 @@ Public Class MainWindow
     End Function
 
     Private Sub about_Click(sender As Object, e As EventArgs) Handles about.Click
+        'show the 'About This Program'-Window
         aboutus.Show()
     End Sub
 
     Public Function GetIniSetting()
+        'used to read the ini-files
         Dim file_stream As System.IO.StreamReader = New System.IO.StreamReader(My.Settings.languagefile)
         Dim inhalt As String = file_stream.ReadToEnd()
         Dim anfang_des_attributs As Integer = InStr(inhalt, "Wert ") + 12
@@ -303,6 +315,7 @@ Public Class WindowsApi
     End Enum
 
     Public Structure FLASHWINFO
+        'for flashing in taskbar
         Public cbSize As UInt32
         Public hwnd As IntPtr
         Public dwFlags As FlashWindowFlags
@@ -311,8 +324,9 @@ Public Class WindowsApi
     End Structure
 
     Public Shared Function FlashWindow(ByRef handle As IntPtr, ByVal FlashTitleBar As Boolean, ByVal FlashTray As Boolean, ByVal FlashCount As Integer) As Boolean
-        If handle = Nothing Then Return False
 
+        ' for flashing in taskbar
+        If handle = Nothing Then Return False
         Try
             Dim fwi As New FLASHWINFO
             With fwi

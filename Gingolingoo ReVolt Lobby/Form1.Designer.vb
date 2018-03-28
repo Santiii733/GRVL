@@ -255,12 +255,13 @@ Partial Class MainWindow
         Me.devtools.Name = "devtools"
         Me.devtools.Size = New System.Drawing.Size(72, 20)
         Me.devtools.Text = "Developer"
+        Me.devtools.Visible = False
         '
         'ConsoleToolStripMenuItem
         '
         Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_code
         Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
-        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsoleToolStripMenuItem.Text = "Console"
         '
         'SplitContainer1
@@ -551,7 +552,7 @@ Partial Class MainWindow
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Gingolingoo ReVolt Lobby"
+        Me.Text = "Gingolingoo Re-Volt Lobby"
         Me.ToolTip1.SetToolTip(Me, "$new_server")
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()

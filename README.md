@@ -9,7 +9,7 @@ Note: The latest Build is always in the 'release candidate'-Folder.
 # Changelog:
 
 -- Version 0.0.0.1 Initial Release --
-+ Added basic functionality
-+ Game can be started with 'Create Server' > set 'Ready' > Click 'Start Game'
+++ Added basic functionality
+++ Game can be started with 'Create Server' > set 'Ready' > Click 'Start Game'
 
-* At this point there is no network-code underlying, so no multiplayer matches can be played.
+** At this point there is no network-code underlying, so no multiplayer matches can be played.

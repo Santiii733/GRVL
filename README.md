@@ -14,8 +14,8 @@ Put the files inside the 'release candidate'-folder in your Re-Volt Game folder,
 -- Version 0.0.0.1 | Initial Release --
 
 + Added basic functionality
-+ Game can be started with 'Create Server' > set 'Ready' > Click 'Start Game'* **
++ Game can be started with 'Create Server' > set 'Ready' > Click 'Start Game'*1 *2
 
 
-* At this point there is no network-code underlying, so no multiplayer matches can be played.
-** Be sure to set the path for rvgl.exe in the Settings -> Game Settings correctly.
+*1 At this point there is no network-code underlying, so no multiplayer matches can be played.
+*2 Be sure to set the path for rvgl.exe in the Settings -> Game Settings correctly.

@@ -219,6 +219,7 @@ Public Class MainWindow
         FriendlistToolStripMenuItem.Text = GetIniValue("language", "$friendlist", My.Settings.languagefile, "$friendlist")
         savechatas.Text = GetIniValue("language", "$save_chat_log", My.Settings.languagefile, "$save_chat_log")
         delchathistory.Text = GetIniValue("language", "$delete_chat_history", My.Settings.languagefile, "$delete_chat_history")
+        about.ToolTipText = GetIniValue("language", "$about", My.Settings.languagefile, "$about")
 
         'Settings
         settings.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")

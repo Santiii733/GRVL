@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 *.ide-wal
 <<<<<<< HEAD
@@ -14,3 +15,5 @@
 .vs/Gingolingoo ReVolt Lobby/v15/.suo
 *.ide
 >>>>>>> Release-Candidates
+=======
+>>>>>>> 9dec436b51f17a172c8c124bfd8f169b64292fbf

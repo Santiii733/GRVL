@@ -1,0 +1,18 @@
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe.config
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.pdb
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.xml
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.Resources.resources
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.GenerateResource.Cache
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.CoreCompileInputs.cache
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.exe
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.xml
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.pdb
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.settings.resources
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.login.resources
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.createserver.resources
+c:\users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.mplobby.resources
+C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.console.resources
+C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
+C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.aboutus.resources
+C:\Users\onkel\source\repos\Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.MainWindow.resources

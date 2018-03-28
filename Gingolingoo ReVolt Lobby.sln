@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Gingolingoo ReVolt Lobby", "Gingolingoo ReVolt Lobby\Gingolingoo ReVolt Lobby.vbproj", "{5F380112-60C0-43BB-9ECC-442BFB2A990F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F380112-60C0-43BB-9ECC-442BFB2A990F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F380112-60C0-43BB-9ECC-442BFB2A990F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F380112-60C0-43BB-9ECC-442BFB2A990F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F380112-60C0-43BB-9ECC-442BFB2A990F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E845CF73-8368-4C47-A871-C6FC950AD1DE}
+	EndGlobalSection
+EndGlobal

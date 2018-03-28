@@ -1,8 +1,16 @@
 
 *.ide-wal
+<<<<<<< HEAD
 *.ide
 *.ide
 *.ide-shm
 .vs/Gingolingoo ReVolt Lobby/v15/.suo
 *.ide
 .vs/Gingolingoo ReVolt Lobby/v15/.suo
+=======
+*.ide-shm
+*.ide
+.vs/Gingolingoo ReVolt Lobby/v15/.suo
+.vs/Gingolingoo ReVolt Lobby/v15/.suo
+*.ide
+>>>>>>> Release-Candidates

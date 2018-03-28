@@ -6,6 +6,9 @@ This project is a work in progress, and is also OpenSource, so feel free to cont
 
 Note: The latest Build is always in the 'release candidate'-Folder.
 
+Install:
+Put the files inside the 'release candidate'-folder in your Re-Volt Game folder, alongside rvgl.exe
+
 # Changelog:
 
 -- Version 0.0.0.1 | Initial Release --

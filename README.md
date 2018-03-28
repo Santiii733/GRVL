@@ -18,4 +18,5 @@ Put the files inside the 'release candidate'-folder in your Re-Volt Game folder,
 
 
 *1 At this point there is no network-code underlying, so no multiplayer matches can be played.
+
 *2 Be sure to set the path for rvgl.exe in the Settings -> Game Settings correctly.

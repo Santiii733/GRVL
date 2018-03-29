@@ -22,6 +22,7 @@ Partial Class console
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(console))
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class console
         Me.ClientSize = New System.Drawing.Size(680, 580)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.RichTextBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "console"
         Me.Text = "Developer Console"
         Me.ResumeLayout(False)

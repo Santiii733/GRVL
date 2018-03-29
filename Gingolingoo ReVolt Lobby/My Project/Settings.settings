@@ -6,7 +6,7 @@
       <Value Profile="(Default)">NewPlayer</Value>
     </Setting>
     <Setting Name="flash_nick_mainchat" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="revolt_path" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -19,6 +19,9 @@
     </Setting>
     <Setting Name="language" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="muted" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -42,6 +42,11 @@ Gingolingoo ReVolt Lobby
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.arrow_refresh">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -87,6 +92,11 @@ Gingolingoo ReVolt Lobby
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.message">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+</summary>
+</member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.page_edit">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -118,6 +128,16 @@ Gingolingoo ReVolt Lobby
 </summary>
 </member>
 <member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.server_connect">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.sound">
+<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Gingolingoo_ReVolt_Lobby.My.Resources.Resources.sound_mute">
 <summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>

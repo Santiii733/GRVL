@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property flash_nick_mainchat() As Boolean
             Get
                 Return CType(Me("flash_nick_mainchat"),Boolean)
@@ -123,6 +123,18 @@ Namespace My
             End Get
             Set
                 Me("language") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property muted() As Boolean
+            Get
+                Return CType(Me("muted"),Boolean)
+            End Get
+            Set
+                Me("muted") = value
             End Set
         End Property
     End Class

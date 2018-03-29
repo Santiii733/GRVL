@@ -240,6 +240,7 @@ Partial Class mplobby
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.SplitContainer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mplobby"
         Me.Text = "$mplobby"
         Me.SplitContainer1.Panel1.ResumeLayout(False)

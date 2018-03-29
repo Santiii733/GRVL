@@ -22,8 +22,11 @@ Partial Class settings
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(settings))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.programsettings = New System.Windows.Forms.TabPage()
+        Me.lang = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.nickname = New System.Windows.Forms.Label()
         Me.chatsettings = New System.Windows.Forms.GroupBox()
@@ -37,8 +40,6 @@ Partial Class settings
         Me.cancel = New System.Windows.Forms.Button()
         Me.apply = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.lang = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.programsettings.SuspendLayout()
         Me.chatsettings.SuspendLayout()
@@ -71,6 +72,24 @@ Partial Class settings
         Me.programsettings.TabIndex = 0
         Me.programsettings.Text = "$programsettings"
         Me.programsettings.UseVisualStyleBackColor = True
+        '
+        'lang
+        '
+        Me.lang.AutoSize = True
+        Me.lang.Location = New System.Drawing.Point(11, 48)
+        Me.lang.Name = "lang"
+        Me.lang.Size = New System.Drawing.Size(60, 13)
+        Me.lang.TabIndex = 5
+        Me.lang.Text = "$language:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(77, 45)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 3
         '
         'TextBox3
         '
@@ -186,24 +205,6 @@ Partial Class settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(77, 45)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 3
-        '
-        'lang
-        '
-        Me.lang.AutoSize = True
-        Me.lang.Location = New System.Drawing.Point(11, 48)
-        Me.lang.Name = "lang"
-        Me.lang.Size = New System.Drawing.Size(60, 13)
-        Me.lang.TabIndex = 5
-        Me.lang.Text = "$language:"
-        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,6 +214,7 @@ Partial Class settings
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "settings"

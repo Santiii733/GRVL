@@ -22,6 +22,7 @@ Partial Class login
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.nickname = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.quit = New System.Windows.Forms.Button()
@@ -97,9 +98,10 @@ Partial Class login
         Me.Controls.Add(Me.quit)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.nickname)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "login"
+        Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

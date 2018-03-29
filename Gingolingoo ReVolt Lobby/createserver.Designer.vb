@@ -22,6 +22,7 @@ Partial Class createserver
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(createserver))
         Me.serverinfo = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.password = New System.Windows.Forms.Label()
@@ -239,6 +240,7 @@ Partial Class createserver
         Me.Controls.Add(Me.ok)
         Me.Controls.Add(Me.cancel)
         Me.Controls.Add(Me.serverinfo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "createserver"

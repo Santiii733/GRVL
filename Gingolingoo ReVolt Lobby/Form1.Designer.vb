@@ -57,11 +57,14 @@ Partial Class MainWindow
         Me.servernamecol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playercountcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ipcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.pwd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.friendsonly = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.savechatas = New System.Windows.Forms.ToolStripButton()
         Me.delchathistory = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.mutebtn = New System.Windows.Forms.ToolStripButton()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -80,8 +83,6 @@ Partial Class MainWindow
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.pwd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.friendsonly = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,7 +262,7 @@ Partial Class MainWindow
         '
         'ConsoleToolStripMenuItem
         '
-        Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_code
+        Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal
         Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
         Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.ConsoleToolStripMenuItem.Text = "Console"
@@ -357,10 +358,19 @@ Partial Class MainWindow
         '
         Me.ipcol.Text = "$ip"
         '
+        'pwd
+        '
+        Me.pwd.Text = "$pwd_protected"
+        Me.pwd.Width = 93
+        '
+        'friendsonly
+        '
+        Me.friendsonly.Text = "$friends_only"
+        '
         'ToolStrip2
         '
         Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.savechatas, Me.delchathistory, Me.ToolStripSeparator5, Me.ToolStripLabel1})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.savechatas, Me.delchathistory, Me.ToolStripSeparator5, Me.ToolStripLabel1, Me.mutebtn})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.Size = New System.Drawing.Size(551, 25)
@@ -396,6 +406,17 @@ Partial Class MainWindow
         Me.ToolStripLabel1.Size = New System.Drawing.Size(47, 22)
         Me.ToolStripLabel1.Text = "$typing"
         Me.ToolStripLabel1.Visible = False
+        '
+        'mutebtn
+        '
+        Me.mutebtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.mutebtn.CheckOnClick = True
+        Me.mutebtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.mutebtn.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.sound
+        Me.mutebtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mutebtn.Name = "mutebtn"
+        Me.mutebtn.Size = New System.Drawing.Size(23, 22)
+        Me.mutebtn.Text = "ToolStripButton1"
         '
         'TextBox1
         '
@@ -540,15 +561,6 @@ Partial Class MainWindow
         Me.SaveFileDialog1.Filter = "Text-Dateien|*.txt|Alle Dateien|*.*"
         Me.SaveFileDialog1.SupportMultiDottedExtensions = True
         '
-        'pwd
-        '
-        Me.pwd.Text = "$pwd_protected"
-        Me.pwd.Width = 93
-        '
-        'friendsonly
-        '
-        Me.friendsonly.Text = "$friends_only"
-        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -645,4 +657,5 @@ Partial Class MainWindow
     Friend WithEvents ConsoleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents pwd As ColumnHeader
     Friend WithEvents friendsonly As ColumnHeader
+    Friend WithEvents mutebtn As ToolStripButton
 End Class

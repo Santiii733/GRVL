@@ -31,6 +31,13 @@ Public Class MainWindow
         wanip.Text = GetExternalIP().ToString
         ToolStripStatusLabel4.Text = My.Application.Info.Version.ToString
         login.ComboBox1.Text = My.Settings.language
+        settings.flashonmcmsg.Checked = My.Settings.flash_nick_mainchat
+        mutebtn.Checked = My.Settings.muted
+        If mutebtn.CheckState = CheckState.Checked Then
+            mutebtn.Image = My.Resources.sound_mute
+        Else
+            mutebtn.Image = My.Resources.sound
+        End If
         console.RichTextBox1.AppendText(My.Computer.Clock.LocalTime.ToString & vbNewLine)
         console.RichTextBox1.AppendText("OS: " & My.Computer.Info.OSFullName & vbNewLine)
         console.RichTextBox1.AppendText("Version: " & My.Computer.Info.OSVersion & vbNewLine)
@@ -39,9 +46,6 @@ Public Class MainWindow
         console.RichTextBox1.AppendText("Available RAM: " & My.Computer.Info.AvailablePhysicalMemory & " bytes" & vbNewLine)
         console.RichTextBox1.AppendText("Available VRAM: " & My.Computer.Info.AvailableVirtualMemory & " bytes" & vbNewLine)
         console.RichTextBox1.AppendText("Is connected to a Network: " & My.Computer.Network.IsAvailable.ToString & vbNewLine)
-
-        'Dim friendnode As TreeNode = TreeView1.Nodes.Add("$friends")
-        'Dim globalnode As TreeNode = TreeView1.Nodes.Add("$global")
 
         'use this to flash in taskbar:
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
@@ -147,10 +151,28 @@ Public Class MainWindow
     Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
         'gets the ENTER-KeyDown Event on the Chat-Textbox
         If e.KeyData = Keys.Enter Then
-            RichTextBox1.AppendText(My.Settings.nickname & ": " + TextBox1.Text & vbNewLine)
+            If TextBox1.Text = "/console" Then
+                console.Show()
+            ElseIf TextBox1.Text = "/dev" Then
+                devtools.Visible = True
+            ElseIf TextBox1.Text = "/createserver" Then
+                createserver.Show()
+            ElseIf TextBox1.Text = "/cs" Then
+                createserver.Show()
+            ElseIf TextBox1.Text = "/settings" Then
+                settings.Show()
+            ElseIf TextBox1.Text = "/s" Then
+                settings.Show()
+            ElseIf TextBox1.Text = "/friendlist" Then
+                'friendlist.Show() [not implemented yet]
+            ElseIf TextBox1.Text = "/fl" Then
+                'friendlist.Show() [not implemented yet]
+            Else
+                RichTextBox1.AppendText(My.Settings.nickname & ": " + TextBox1.Text & vbNewLine)
+            End If
+            e.SuppressKeyPress = True
             TextBox1.Text = Nothing
         End If
-
     End Sub
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles quitmenu.Click
@@ -206,7 +228,6 @@ Public Class MainWindow
         Try
             RichTextBox1.SaveFile(SaveFileDialog1.FileName)
         Catch exc As Exception
-            MsgBox(exc.ToString)
             console.RichTextBox1.AppendText(exc.Message.ToString)
         End Try
     End Sub
@@ -339,6 +360,28 @@ Public Class MainWindow
         Return Nothing
     End Function
 
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+        If My.Settings.flash_nick_mainchat = True Then
+            Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
+        End If
+        If mutebtn.CheckState = CheckState.Unchecked Then
+            My.Computer.Audio.Play(My.Resources.message, AudioPlayMode.Background)
+        End If
+    End Sub
+
+    Private Sub mutebtn_Click(sender As Object, e As EventArgs) Handles mutebtn.Click
+        If mutebtn.CheckState = CheckState.Checked Then
+            mutebtn.Image = My.Resources.sound_mute
+        Else
+            mutebtn.Image = My.Resources.sound
+        End If
+        My.Settings.muted = mutebtn.Checked
+    End Sub
+
+    Private Sub MainWindow_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Application.Exit()
+        Application.ExitThread()
+    End Sub
 End Class
 
 Public Class WindowsApi

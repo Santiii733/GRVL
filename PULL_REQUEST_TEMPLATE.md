@@ -1,1 +1,1 @@
-Nothing to see here yet, go away. 
+You may leave a Pull request and contribute to the project.

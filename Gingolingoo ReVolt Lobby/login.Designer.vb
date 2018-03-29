@@ -29,12 +29,15 @@ Partial Class login
         Me.ok = New System.Windows.Forms.Button()
         Me.lang = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.password = New System.Windows.Forms.Label()
+        Me.createAccount = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'nickname
         '
         Me.nickname.AutoSize = True
-        Me.nickname.Location = New System.Drawing.Point(12, 9)
+        Me.nickname.Location = New System.Drawing.Point(9, 9)
         Me.nickname.Name = "nickname"
         Me.nickname.Size = New System.Drawing.Size(59, 13)
         Me.nickname.TabIndex = 0
@@ -46,7 +49,7 @@ Partial Class login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(12, 25)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(350, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(174, 20)
         Me.TextBox1.TabIndex = 1
         '
         'quit
@@ -87,11 +90,43 @@ Partial Class login
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 5
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(188, 25)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2.Size = New System.Drawing.Size(174, 20)
+        Me.TextBox2.TabIndex = 6
+        '
+        'password
+        '
+        Me.password.AutoSize = True
+        Me.password.Location = New System.Drawing.Point(185, 9)
+        Me.password.Name = "password"
+        Me.password.Size = New System.Drawing.Size(58, 13)
+        Me.password.TabIndex = 7
+        Me.password.Text = "$password"
+        '
+        'createAccount
+        '
+        Me.createAccount.AutoSize = True
+        Me.createAccount.LinkColor = System.Drawing.Color.Blue
+        Me.createAccount.Location = New System.Drawing.Point(9, 48)
+        Me.createAccount.Name = "createAccount"
+        Me.createAccount.Size = New System.Drawing.Size(83, 13)
+        Me.createAccount.TabIndex = 8
+        Me.createAccount.TabStop = True
+        Me.createAccount.Text = "$createAccount"
+        Me.createAccount.VisitedLinkColor = System.Drawing.Color.Blue
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(374, 98)
+        Me.ClientSize = New System.Drawing.Size(374, 90)
+        Me.Controls.Add(Me.createAccount)
+        Me.Controls.Add(Me.password)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.lang)
         Me.Controls.Add(Me.ok)
@@ -113,4 +148,7 @@ Partial Class login
     Friend WithEvents ok As Button
     Friend WithEvents lang As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents password As Label
+    Friend WithEvents createAccount As LinkLabel
 End Class

@@ -1,7 +1,8 @@
 ﻿Imports System
 Imports System.IO
 Imports System.Collections
-
+Imports System.Text
+Imports System.Security.Cryptography
 
 Public Class login
     Private Sub login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,13 +17,43 @@ Public Class login
         Next
         ComboBox1.Text = My.Settings.language
     End Sub
+    Public Shared Function GenerateSHA256String(ByVal inputString) As String
+        Dim sha256 As SHA256 = SHA256Managed.Create()
+        Dim bytes As Byte() = Encoding.UTF8.GetBytes(inputString)
+        Dim hash As Byte() = sha256.ComputeHash(bytes)
+        Dim stringBuilder As New StringBuilder()
 
+        For i As Integer = 0 To hash.Length - 1
+            stringBuilder.Append(hash(i).ToString("X2"))
+        Next
+
+        Return stringBuilder.ToString()
+    End Function
     Private Sub ok_Click(sender As Object, e As EventArgs) Handles ok.Click
-        My.Settings.nickname = TextBox1.Text
-        My.Settings.Save()
-        MainWindow.Show()
-        MainWindow.reloadall()
-        Me.Close()
+        If TextBox2.Text = "" Then
+            My.Settings.nickname = TextBox1.Text
+            My.Settings.Save()
+            MainWindow.Show()
+            MainWindow.reloadall()
+            Me.Close()
+        Else
+            Dim pass As String = GenerateSHA256String(TextBox2.Text)
+            Using wd As New System.Net.WebClient()
+                Dim loginCheck = wd.DownloadString("https://grvl.gingolingoo.de/api.php?action=login&uname=" + TextBox1.Text + "&pword=" + pass + "&ip=" + MainWindow.GetExternalIP())
+                If loginCheck <> "0" Then
+                    My.Settings.nickname = loginCheck
+                    My.Settings.Save()
+                    MainWindow.Show()
+                    MainWindow.reloadall()
+                    Me.Close()
+                Else
+                    MsgBox("Username or password wrong!")
+                End If
+            End Using
+        End If
+
+
+
     End Sub
 
     Private Sub quit_Click(sender As Object, e As EventArgs) Handles quit.Click
@@ -34,6 +65,14 @@ Public Class login
         My.Settings.language = ComboBox1.Text
         My.Settings.Save()
         MainWindow.SetLang()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles createAccount.LinkClicked
+        My.Settings.Save()
+        register.Show()
+        MainWindow.reloadall()
+        Me.Close()
+
     End Sub
 End Class
 

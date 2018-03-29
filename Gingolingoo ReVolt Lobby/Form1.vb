@@ -127,7 +127,7 @@ Public Class MainWindow
         Return Nothing
     End Function
 
-    Private Shared Function GetExternalIP() As String
+    Public Shared Function GetExternalIP() As String
         'Resolve the External IP-Adress
         Dim Response As String = String.Empty
         Try
@@ -269,6 +269,14 @@ Public Class MainWindow
         login.quit.Text = GetIniValue("language", "$quit", My.Settings.languagefile, "$quit")
         login.nickname.Text = GetIniValue("language", "$nickname", My.Settings.languagefile, "$nickname")
         login.lang.Text = GetIniValue("language", "$language", My.Settings.languagefile, "$language")
+        login.password.Text = GetIniValue("language", "$password", My.Settings.languagefile, "$password")
+        login.createAccount.Text = GetIniValue("language", "$createAccount", My.Settings.languagefile, "$createAccount")
+        'Register
+        register.username.Text = GetIniValue("language", "$nickname", My.Settings.languagefile, "$nickname")
+        register.password.Text = GetIniValue("language", "$password", My.Settings.languagefile, "$password")
+        register.repassword.Text = GetIniValue("language", "$rePassword", My.Settings.languagefile, "$rePassword")
+        register.email.Text = GetIniValue("language", "$email", My.Settings.languagefile, "$email")
+        register.registerButton.Text = GetIniValue("language", "$register", My.Settings.languagefile, "$register")
 
         'Main window
         file.Text = GetIniValue("language", "$file", My.Settings.languagefile, "$file")

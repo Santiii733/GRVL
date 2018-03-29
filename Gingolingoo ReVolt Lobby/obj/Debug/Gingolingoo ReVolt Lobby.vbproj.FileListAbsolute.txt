@@ -34,3 +34,21 @@ C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.exe
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.xml
 C:\Users\onkel\OneDrive\Dokumente\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.pdb
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe.config
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.exe
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.pdb
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\bin\Debug\Gingolingoo ReVolt Lobby.xml
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbprojResolveAssemblyReference.cache
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.aboutus.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.console.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.createserver.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.MainWindow.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.login.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.mplobby.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.Resources.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.settings.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.GenerateResource.Cache
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.vbproj.CoreCompileInputs.cache
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.exe
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.xml
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.pdb

@@ -64,13 +64,60 @@ Public Class MainWindow
         Nodes(2).ImageIndex = 6
         Nodes(2).SelectedImageIndex = 6
         Nodes(2).Name = "local"
+        Nodes(3) = New TreeNode(GetIniValue("language", "$offline", My.Settings.languagefile, "$offline"))
+        Nodes(3).ImageIndex = 1
+        Nodes(3).SelectedImageIndex = 1
+        Nodes(3).Name = "offline"
 
         TreeView1.Nodes.Add(Nodes(0))
         TreeView1.Nodes.Add(Nodes(1))
         TreeView1.Nodes.Add(Nodes(2))
+        TreeView1.Nodes.Add(Nodes(3))
 
+
+
+
+        Dim users()
+        Dim uCount As Integer = 10
         Dim tmpNode() As TreeNode = TreeView1.Nodes.Find("global", True)
-        tmpNode(0).Nodes.Add(My.Settings.nickname).ToString()
+        Dim tmpNodeOffline() As TreeNode = TreeView1.Nodes.Find("offline", True)
+
+        Try
+            Using wc As New System.Net.WebClient()
+                Dim udata = wc.DownloadString("https://grvl.gingolingoo.de/api.php?action=getUsers")
+                users = udata.Split(";")
+                For Each item As String In users
+
+                    Dim userdata() = item.Split("|")
+                    If userdata(0) <> "" Then
+                        Nodes(uCount) = New TreeNode(userdata(0))
+                        If userdata(1) = 0 Then
+                            Nodes(uCount).ImageIndex = 1
+                        End If
+                        If userdata(1) = 1 Then
+                            Nodes(uCount).ImageIndex = 2
+                        End If
+                        If userdata(1) = 2 Then
+                            Nodes(uCount).ImageIndex = 3
+                        End If
+                        If userdata(1) = 3 Then
+                            Nodes(uCount).ImageIndex = 4
+                        End If
+                        If userdata(1) = 0 Then
+                            tmpNodeOffline(0).Nodes.Add(Nodes(uCount))
+                        Else
+                            tmpNode(0).Nodes.Add(Nodes(uCount))
+                        End If
+                    End If
+                Next
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+
+
         TreeView1.ExpandAll()
 
         Return Nothing

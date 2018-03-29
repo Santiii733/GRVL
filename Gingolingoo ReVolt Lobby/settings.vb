@@ -27,7 +27,7 @@
     End Sub
 
     Private Sub settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox1.Text = My.Settings.language
+
         Dim di As New IO.DirectoryInfo(Application.StartupPath & "\languages\")
         Dim diar1 As IO.FileInfo() = di.GetFiles("*.ini")
         Dim dra As IO.FileInfo
@@ -35,6 +35,7 @@
         For Each dra In diar1
             ComboBox1.Items.Add(dra)
         Next
+        ComboBox1.Text = My.Settings.language
         TextBox3.Text = My.Settings.nickname
         flashonmcmsg.Checked = My.Settings.flash_nick_mainchat
         TextBox1.Text = My.Settings.revolt_path

@@ -10,7 +10,7 @@
         str(1) = playercnt.Text.ToString
         str(2) = MainWindow.wanip.ToString
         itm = New ListViewItem(str)
-        MainWindow.ListView2.Items.Add(itm)
+        MainWindow.serverlist.Items.Add(itm)
         Me.Close()
         mplobby.Show()
     End Sub

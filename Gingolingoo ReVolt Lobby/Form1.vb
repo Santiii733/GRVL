@@ -30,7 +30,7 @@ Public Class MainWindow
         Me.Hide() 'hides the main form for displaying the login form first
         wanip.Text = GetExternalIP().ToString
         ToolStripStatusLabel4.Text = My.Application.Info.Version.ToString
-
+        login.ComboBox1.Text = My.Settings.language
         console.RichTextBox1.AppendText(My.Computer.Clock.LocalTime.ToString & vbNewLine)
         console.RichTextBox1.AppendText("OS: " & My.Computer.Info.OSFullName & vbNewLine)
         console.RichTextBox1.AppendText("Version: " & My.Computer.Info.OSVersion & vbNewLine)

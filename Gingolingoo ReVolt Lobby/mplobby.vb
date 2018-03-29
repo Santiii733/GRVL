@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub mplobby_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ToolStripLabel2.Text = (MainWindow.ListView2.SelectedItems.ToString)
+        ToolStripLabel2.Text = (MainWindow.serverlist.SelectedItems.ToString)
         Dim treeview1nodes As TreeNodeCollection = TreeView1.Nodes
         TreeView1.Nodes.Clear()
         Nodes(0) = New TreeNode(MainWindow.GetIniValue("language", "$friends", My.Settings.languagefile, "$friends"))

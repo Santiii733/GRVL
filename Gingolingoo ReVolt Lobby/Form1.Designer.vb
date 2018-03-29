@@ -53,7 +53,7 @@ Partial Class MainWindow
         Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.userimagelist = New System.Windows.Forms.ImageList(Me.components)
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.serverlist = New System.Windows.Forms.ListView()
         Me.servernamecol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.playercountcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ipcol = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -80,6 +80,8 @@ Partial Class MainWindow
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.pwd = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.friendsonly = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,7 +263,7 @@ Partial Class MainWindow
         '
         Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.script_code
         Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
-        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.ConsoleToolStripMenuItem.Text = "Console"
         '
         'SplitContainer1
@@ -317,7 +319,7 @@ Partial Class MainWindow
         '
         'SplitContainer2.Panel1
         '
-        Me.SplitContainer2.Panel1.Controls.Add(Me.ListView2)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.serverlist)
         '
         'SplitContainer2.Panel2
         '
@@ -328,18 +330,18 @@ Partial Class MainWindow
         Me.SplitContainer2.SplitterDistance = 141
         Me.SplitContainer2.TabIndex = 0
         '
-        'ListView2
+        'serverlist
         '
-        Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.servernamecol, Me.playercountcol, Me.ipcol})
-        Me.ListView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView2.FullRowSelect = True
-        Me.ListView2.Location = New System.Drawing.Point(0, 0)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(551, 141)
-        Me.ListView2.TabIndex = 0
-        Me.ToolTip1.SetToolTip(Me.ListView2, "$serverlist")
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
+        Me.serverlist.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.servernamecol, Me.playercountcol, Me.ipcol, Me.pwd, Me.friendsonly})
+        Me.serverlist.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.serverlist.FullRowSelect = True
+        Me.serverlist.Location = New System.Drawing.Point(0, 0)
+        Me.serverlist.Name = "serverlist"
+        Me.serverlist.Size = New System.Drawing.Size(551, 141)
+        Me.serverlist.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.serverlist, "$serverlist")
+        Me.serverlist.UseCompatibleStateImageBehavior = False
+        Me.serverlist.View = System.Windows.Forms.View.Details
         '
         'servernamecol
         '
@@ -538,6 +540,15 @@ Partial Class MainWindow
         Me.SaveFileDialog1.Filter = "Text-Dateien|*.txt|Alle Dateien|*.*"
         Me.SaveFileDialog1.SupportMultiDottedExtensions = True
         '
+        'pwd
+        '
+        Me.pwd.Text = "$pwd_protected"
+        Me.pwd.Width = 93
+        '
+        'friendsonly
+        '
+        Me.friendsonly.Text = "$friends_only"
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -602,7 +613,7 @@ Partial Class MainWindow
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents TreeView1 As TreeView
-    Friend WithEvents ListView2 As ListView
+    Friend WithEvents serverlist As ListView
     Friend WithEvents servernamecol As ColumnHeader
     Friend WithEvents playercountcol As ColumnHeader
     Friend WithEvents ipcol As ColumnHeader
@@ -632,4 +643,6 @@ Partial Class MainWindow
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents devtools As ToolStripMenuItem
     Friend WithEvents ConsoleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents pwd As ColumnHeader
+    Friend WithEvents friendsonly As ColumnHeader
 End Class

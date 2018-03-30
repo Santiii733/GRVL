@@ -53,3 +53,4 @@ C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolin
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.xml
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo ReVolt Lobby.pdb
 C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.register.resources
+C:\Users\gingo\Documents\GitHub\GRVL\Gingolingoo ReVolt Lobby\obj\Debug\Gingolingoo_ReVolt_Lobby.modloader.resources

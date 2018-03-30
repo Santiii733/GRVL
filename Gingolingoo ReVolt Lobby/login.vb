@@ -71,8 +71,6 @@ Public Class login
         My.Settings.Save()
         register.Show()
         MainWindow.reloadall()
-        Me.Close()
-
     End Sub
 End Class
 

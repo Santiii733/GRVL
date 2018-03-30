@@ -390,6 +390,10 @@ Public Class MainWindow
         Application.Exit()
         Application.ExitThread()
     End Sub
+
+    Private Sub ModsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModsToolStripMenuItem.Click
+        modloader.Show()
+    End Sub
 End Class
 
 Public Class WindowsApi

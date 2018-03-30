@@ -119,6 +119,12 @@
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modloader.Designer.vb">
+      <DependentUpon>modloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="modloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mplobby.Designer.vb">
       <DependentUpon>mplobby.vb</DependentUpon>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modloader.resx">
+      <DependentUpon>modloader.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mplobby.resx">
       <DependentUpon>mplobby.vb</DependentUpon>

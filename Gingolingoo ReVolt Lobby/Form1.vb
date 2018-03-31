@@ -117,10 +117,12 @@ Public Class MainWindow
 
             End Using
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            If devtools.Visible = True Then
+                MsgBox(ex.ToString)
+            Else
+                MsgBox(GetIniValue("language", "$no_inet_error", My.Settings.languagefile, "$no_inet_error"), 0, "Error")
+            End If
         End Try
-
-
 
         TreeView1.ExpandAll()
 
@@ -228,7 +230,9 @@ Public Class MainWindow
         Try
             RichTextBox1.SaveFile(SaveFileDialog1.FileName)
         Catch exc As Exception
-            console.RichTextBox1.AppendText(exc.Message.ToString)
+            If devtools.Visible = True Then
+                console.RichTextBox1.AppendText(exc.Message.ToString)
+            End If
         End Try
     End Sub
 

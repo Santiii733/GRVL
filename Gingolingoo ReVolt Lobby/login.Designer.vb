@@ -31,7 +31,7 @@ Partial Class login
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.password = New System.Windows.Forms.Label()
-        Me.createAccount = New System.Windows.Forms.LinkLabel()
+        Me.createAccount = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'nickname
@@ -49,13 +49,13 @@ Partial Class login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.Location = New System.Drawing.Point(12, 25)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(174, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(158, 20)
         Me.TextBox1.TabIndex = 1
         '
         'quit
         '
-        Me.quit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.quit.Location = New System.Drawing.Point(287, 63)
+        Me.quit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.quit.Location = New System.Drawing.Point(287, 62)
         Me.quit.Name = "quit"
         Me.quit.Size = New System.Drawing.Size(75, 23)
         Me.quit.TabIndex = 2
@@ -64,44 +64,46 @@ Partial Class login
         '
         'ok
         '
-        Me.ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ok.Location = New System.Drawing.Point(206, 63)
+        Me.ok.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ok.Location = New System.Drawing.Point(176, 62)
         Me.ok.Name = "ok"
-        Me.ok.Size = New System.Drawing.Size(75, 23)
+        Me.ok.Size = New System.Drawing.Size(105, 23)
         Me.ok.TabIndex = 3
         Me.ok.Text = "$ok"
         Me.ok.UseVisualStyleBackColor = True
         '
         'lang
         '
+        Me.lang.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lang.AutoSize = True
-        Me.lang.Location = New System.Drawing.Point(13, 68)
+        Me.lang.Location = New System.Drawing.Point(173, 9)
         Me.lang.Name = "lang"
-        Me.lang.Size = New System.Drawing.Size(60, 13)
+        Me.lang.Size = New System.Drawing.Size(57, 13)
         Me.lang.TabIndex = 4
-        Me.lang.Text = "$language:"
+        Me.lang.Text = "$language"
         '
         'ComboBox1
         '
+        Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(79, 64)
+        Me.ComboBox1.Location = New System.Drawing.Point(176, 25)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
         Me.ComboBox1.TabIndex = 5
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(188, 25)
+        Me.TextBox2.Location = New System.Drawing.Point(12, 64)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(174, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(158, 20)
         Me.TextBox2.TabIndex = 6
         '
         'password
         '
         Me.password.AutoSize = True
-        Me.password.Location = New System.Drawing.Point(185, 9)
+        Me.password.Location = New System.Drawing.Point(9, 48)
         Me.password.Name = "password"
         Me.password.Size = New System.Drawing.Size(58, 13)
         Me.password.TabIndex = 7
@@ -109,21 +111,18 @@ Partial Class login
         '
         'createAccount
         '
-        Me.createAccount.AutoSize = True
-        Me.createAccount.LinkColor = System.Drawing.Color.Blue
-        Me.createAccount.Location = New System.Drawing.Point(9, 48)
+        Me.createAccount.Location = New System.Drawing.Point(287, 23)
         Me.createAccount.Name = "createAccount"
-        Me.createAccount.Size = New System.Drawing.Size(83, 13)
+        Me.createAccount.Size = New System.Drawing.Size(75, 23)
         Me.createAccount.TabIndex = 8
-        Me.createAccount.TabStop = True
         Me.createAccount.Text = "$createAccount"
-        Me.createAccount.VisitedLinkColor = System.Drawing.Color.Blue
+        Me.createAccount.UseVisualStyleBackColor = True
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(374, 90)
+        Me.ClientSize = New System.Drawing.Size(374, 98)
         Me.Controls.Add(Me.createAccount)
         Me.Controls.Add(Me.password)
         Me.Controls.Add(Me.TextBox2)
@@ -150,5 +149,5 @@ Partial Class login
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents password As Label
-    Friend WithEvents createAccount As LinkLabel
+    Friend WithEvents createAccount As Button
 End Class

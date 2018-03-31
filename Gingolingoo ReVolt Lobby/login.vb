@@ -67,7 +67,7 @@ Public Class login
         MainWindow.SetLang()
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles createAccount.LinkClicked
+    Private Sub CreateAcc_Click(sender As Object, e As EventArgs) Handles createAccount.Click
         My.Settings.Save()
         register.Show()
         MainWindow.reloadall()

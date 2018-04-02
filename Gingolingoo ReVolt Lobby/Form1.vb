@@ -281,6 +281,7 @@ Public Class MainWindow
         register.repassword.Text = GetIniValue("language", "$rePassword", My.Settings.languagefile, "$rePassword")
         register.email.Text = GetIniValue("language", "$email", My.Settings.languagefile, "$email")
         register.registerButton.Text = GetIniValue("language", "$register", My.Settings.languagefile, "$register")
+        login.guestplay.Text = GetIniValue("language", "$guestplay", My.Settings.languagefile, "$guestplay")
 
         'Main window
         file.Text = GetIniValue("language", "$file", My.Settings.languagefile, "$file")
@@ -310,6 +311,9 @@ Public Class MainWindow
         savechatas.Text = GetIniValue("language", "$save_chat_log", My.Settings.languagefile, "$save_chat_log")
         delchathistory.Text = GetIniValue("language", "$delete_chat_history", My.Settings.languagefile, "$delete_chat_history")
         about.ToolTipText = GetIniValue("language", "$about", My.Settings.languagefile, "$about")
+        mods.Text = GetIniValue("language", "$mods", My.Settings.languagefile, "$mods")
+        pwd.Text = GetIniValue("language", "$is_pwd_protected", My.Settings.languagefile, "$is_pwd_protected")
+        friendsonly.Text = GetIniValue("language", "$is_friends_only", My.Settings.languagefile, "$is_friends_only")
 
         'Settings
         settings.Text = GetIniValue("language", "$settings", My.Settings.languagefile, "$settings")
@@ -395,7 +399,7 @@ Public Class MainWindow
         Application.ExitThread()
     End Sub
 
-    Private Sub ModsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ModsToolStripMenuItem.Click
+    Private Sub ModsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mods.Click
         modloader.Show()
     End Sub
 End Class

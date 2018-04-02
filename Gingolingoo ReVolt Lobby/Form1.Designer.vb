@@ -47,6 +47,7 @@ Partial Class MainWindow
         Me.invismenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.manage = New System.Windows.Forms.ToolStripMenuItem()
         Me.FriendlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mods = New System.Windows.Forms.ToolStripMenuItem()
         Me.devtools = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -83,7 +84,6 @@ Partial Class MainWindow
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.ModsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,7 +240,7 @@ Partial Class MainWindow
         '
         'manage
         '
-        Me.manage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FriendlistToolStripMenuItem, Me.ModsToolStripMenuItem})
+        Me.manage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FriendlistToolStripMenuItem, Me.mods})
         Me.manage.Name = "manage"
         Me.manage.Size = New System.Drawing.Size(68, 20)
         Me.manage.Text = "$manage"
@@ -250,8 +250,15 @@ Partial Class MainWindow
         Me.FriendlistToolStripMenuItem.Enabled = False
         Me.FriendlistToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.user
         Me.FriendlistToolStripMenuItem.Name = "FriendlistToolStripMenuItem"
-        Me.FriendlistToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FriendlistToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.FriendlistToolStripMenuItem.Text = "$friendlist"
+        '
+        'mods
+        '
+        Me.mods.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.wrench_orange
+        Me.mods.Name = "mods"
+        Me.mods.Size = New System.Drawing.Size(126, 22)
+        Me.mods.Text = "$mods"
         '
         'devtools
         '
@@ -265,7 +272,7 @@ Partial Class MainWindow
         '
         Me.ConsoleToolStripMenuItem.Image = Global.Gingolingoo_ReVolt_Lobby.My.Resources.Resources.application_xp_terminal
         Me.ConsoleToolStripMenuItem.Name = "ConsoleToolStripMenuItem"
-        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsoleToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.ConsoleToolStripMenuItem.Text = "Console"
         '
         'SplitContainer1
@@ -348,25 +355,27 @@ Partial Class MainWindow
         'servernamecol
         '
         Me.servernamecol.Text = "$server_name"
-        Me.servernamecol.Width = 118
+        Me.servernamecol.Width = 145
         '
         'playercountcol
         '
         Me.playercountcol.Text = "$playercount"
-        Me.playercountcol.Width = 97
+        Me.playercountcol.Width = 100
         '
         'ipcol
         '
         Me.ipcol.Text = "$ip"
+        Me.ipcol.Width = 100
         '
         'pwd
         '
-        Me.pwd.Text = "$pwd_protected"
-        Me.pwd.Width = 93
+        Me.pwd.Text = "$is_pwd_protected"
+        Me.pwd.Width = 100
         '
         'friendsonly
         '
-        Me.friendsonly.Text = "$friends_only"
+        Me.friendsonly.Text = "$is_friends_only"
+        Me.friendsonly.Width = 100
         '
         'ToolStrip2
         '
@@ -562,12 +571,6 @@ Partial Class MainWindow
         Me.SaveFileDialog1.Filter = "Text-Dateien|*.txt|Alle Dateien|*.*"
         Me.SaveFileDialog1.SupportMultiDottedExtensions = True
         '
-        'ModsToolStripMenuItem
-        '
-        Me.ModsToolStripMenuItem.Name = "ModsToolStripMenuItem"
-        Me.ModsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ModsToolStripMenuItem.Text = "$mods"
-        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -665,5 +668,5 @@ Partial Class MainWindow
     Friend WithEvents pwd As ColumnHeader
     Friend WithEvents friendsonly As ColumnHeader
     Friend WithEvents mutebtn As ToolStripButton
-    Friend WithEvents ModsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mods As ToolStripMenuItem
 End Class

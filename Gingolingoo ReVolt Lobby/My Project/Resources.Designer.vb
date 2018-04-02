@@ -221,6 +221,16 @@ Namespace My.Resources
         '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property rosette() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("rosette", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property script_code() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("script_code", resourceCulture)
@@ -354,6 +364,16 @@ Namespace My.Resources
         Friend ReadOnly Property user_red() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("user_red", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wrench_orange() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wrench_orange", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

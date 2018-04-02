@@ -39,6 +39,8 @@ Partial Class modloader
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(530, 680)
         Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "modloader"
         Me.Text = "modloader"
         Me.ResumeLayout(False)

@@ -32,6 +32,7 @@ Partial Class login
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.password = New System.Windows.Forms.Label()
         Me.createAccount = New System.Windows.Forms.Button()
+        Me.guestplay = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'nickname
@@ -57,7 +58,7 @@ Partial Class login
         Me.quit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.quit.Location = New System.Drawing.Point(287, 62)
         Me.quit.Name = "quit"
-        Me.quit.Size = New System.Drawing.Size(75, 23)
+        Me.quit.Size = New System.Drawing.Size(114, 23)
         Me.quit.TabIndex = 2
         Me.quit.Text = "$quit"
         Me.quit.UseVisualStyleBackColor = True
@@ -76,7 +77,7 @@ Partial Class login
         '
         Me.lang.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lang.AutoSize = True
-        Me.lang.Location = New System.Drawing.Point(173, 9)
+        Me.lang.Location = New System.Drawing.Point(173, 8)
         Me.lang.Name = "lang"
         Me.lang.Size = New System.Drawing.Size(57, 13)
         Me.lang.TabIndex = 4
@@ -87,7 +88,7 @@ Partial Class login
         Me.ComboBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(176, 25)
+        Me.ComboBox1.Location = New System.Drawing.Point(176, 24)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
         Me.ComboBox1.TabIndex = 5
@@ -99,6 +100,7 @@ Partial Class login
         Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(158, 20)
         Me.TextBox2.TabIndex = 6
+        Me.TextBox2.UseSystemPasswordChar = True
         '
         'password
         '
@@ -111,18 +113,28 @@ Partial Class login
         '
         'createAccount
         '
-        Me.createAccount.Location = New System.Drawing.Point(287, 23)
+        Me.createAccount.Location = New System.Drawing.Point(287, 22)
         Me.createAccount.Name = "createAccount"
-        Me.createAccount.Size = New System.Drawing.Size(75, 23)
+        Me.createAccount.Size = New System.Drawing.Size(114, 23)
         Me.createAccount.TabIndex = 8
         Me.createAccount.Text = "$createAccount"
         Me.createAccount.UseVisualStyleBackColor = True
+        '
+        'guestplay
+        '
+        Me.guestplay.AutoSize = True
+        Me.guestplay.Location = New System.Drawing.Point(12, 87)
+        Me.guestplay.Name = "guestplay"
+        Me.guestplay.Size = New System.Drawing.Size(58, 13)
+        Me.guestplay.TabIndex = 9
+        Me.guestplay.Text = "$guestplay"
         '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(374, 98)
+        Me.ClientSize = New System.Drawing.Size(413, 109)
+        Me.Controls.Add(Me.guestplay)
         Me.Controls.Add(Me.createAccount)
         Me.Controls.Add(Me.password)
         Me.Controls.Add(Me.TextBox2)
@@ -132,7 +144,10 @@ Partial Class login
         Me.Controls.Add(Me.quit)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.nickname)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -150,4 +165,5 @@ Partial Class login
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents password As Label
     Friend WithEvents createAccount As Button
+    Friend WithEvents guestplay As Label
 End Class

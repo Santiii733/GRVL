@@ -2,8 +2,23 @@
 Imports System.Text.RegularExpressions
 Imports System.Runtime.InteropServices
 Imports System.Text
+Imports System.Net.Sockets
+Imports System.IO
 
 Public Class MainWindow
+    Private stream As NetworkStream
+    Private streamw As StreamWriter
+    Private streamr As StreamReader
+    Private client As New TcpClient
+    Private t As New Threading.Thread(AddressOf Listen)
+    Private Delegate Sub DAddItem(ByVal s As String)
+    Dim grvlClose As Boolean = False
+    Dim nick As String
+
+    Private Sub AddItem(ByVal s As String)
+        'ListBox1.Items.Add(s)
+        RichTextBox1.AppendText(s.ToString + vbNewLine)
+    End Sub
 
     <DllImport("kernel32")>
     Private Shared Function GetPrivateProfileString(ByVal section As String,
@@ -26,6 +41,7 @@ Public Class MainWindow
 
     Dim Nodes(4096) As TreeNode
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        nick = My.Settings.nickname
         ExecuteParams() 'Executes the Start Parameters like dev or console
         Me.Hide() 'hides the main form for displaying the login form first
         wanip.Text = GetExternalIP().ToString
@@ -50,6 +66,34 @@ Public Class MainWindow
         'use this to flash in taskbar:
         'Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         reloadall()
+        Try
+            client.Connect("134.255.217.252", 9999) ' hier die ip des servers eintragen. 
+            ' da dieser beim testen wohl lokal läuft, hier die loopback-ip 127.0.0.1.
+            If client.Connected Then
+                stream = client.GetStream
+                streamw = New StreamWriter(stream)
+                streamr = New StreamReader(stream)
+                streamw.WriteLine(nick) ' das ist optional.
+                streamw.Flush()
+                t.Start()
+            Else
+                MessageBox.Show("Verbindung zum Server nicht möglich!")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Verbindung zum Server nicht möglich!")
+        End Try
+    End Sub
+
+    Private Sub Listen()
+        While client.Connected
+            Try
+                Me.Invoke(New DAddItem(AddressOf AddItem), streamr.ReadLine)
+            Catch
+                If grvlClose = False Then
+
+                End If
+            End Try
+        End While
     End Sub
 
     Public Function reloadall()
@@ -170,10 +214,11 @@ Public Class MainWindow
             ElseIf TextBox1.Text = "/fl" Then
                 'friendlist.Show() [not implemented yet]
             Else
-                RichTextBox1.AppendText(My.Settings.nickname & ": " + TextBox1.Text & vbNewLine)
+                streamw.WriteLine(TextBox1.Text)
+                streamw.Flush()
             End If
             e.SuppressKeyPress = True
-            TextBox1.Text = Nothing
+            TextBox1.Clear()
         End If
     End Sub
 
@@ -377,6 +422,23 @@ Public Class MainWindow
     End Function
 
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+        RichTextBox1.ReadOnly = False
+        If RichTextBox1.Text.Contains(":D") Then
+            Dim smilie As Image = My.Resources.l
+            Clipboard.SetImage(smilie)
+            RichTextBox1.SelectionStart = RichTextBox1.Text.IndexOf(":D")
+            RichTextBox1.SelectionLength = 2
+            RichTextBox1.Paste()
+        End If
+        If RichTextBox1.Text.Contains(":)") Then
+            Dim smilie As Image = My.Resources.s
+            Clipboard.SetImage(smilie)
+            RichTextBox1.SelectionStart = RichTextBox1.Text.IndexOf(":)")
+            RichTextBox1.SelectionLength = 2
+            RichTextBox1.Paste()
+        End If
+
+        RichTextBox1.ReadOnly = True
         If My.Settings.flash_nick_mainchat = True Then
             Dim res = WindowsApi.FlashWindow(Process.GetCurrentProcess().MainWindowHandle, True, True, 5)
         End If
@@ -395,8 +457,15 @@ Public Class MainWindow
     End Sub
 
     Private Sub MainWindow_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        Application.Exit()
+        grvlClose = True
+        Try
+            client.Close()
+            t.Interrupt()
+            t.Abort()
+        Catch ex As Exception
+        End Try
         Application.ExitThread()
+        Application.Exit()
     End Sub
 
     Private Sub ModsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mods.Click

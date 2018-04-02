@@ -304,5 +304,14 @@
   <ItemGroup>
     <None Include="Resources\rosette.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -200,6 +200,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property l() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("l", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         '''</summary>
         Friend ReadOnly Property message() As System.IO.UnmanagedMemoryStream
@@ -224,6 +234,16 @@ Namespace My.Resources
         Friend ReadOnly Property rosette() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("rosette", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property s() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("s", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

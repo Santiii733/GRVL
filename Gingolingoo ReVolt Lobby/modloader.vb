@@ -36,7 +36,6 @@
         dPan.Controls.Add(dPic)
         dPan.Controls.Add(dTit)
         dPan.Controls.Add(dDesc)
-
         FlowLayoutPanel1.Controls.Add(dPan)
     End Function
 
